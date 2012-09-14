@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ALifeJournal</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <script type="text/javascript" language="javascript">
+        $j=jQuery.noConflict();
+        </script>
+<%= javascript_include_tag "login" %>
+<%= javascript_include_tag "animatedcollapse" %>
+<script type="text/javascript">
+
+animatedcollapse.addDiv('jason', 'fade=1,height=80px')
+animatedcollapse.addDiv('kelly', 'fade=1,height=100px')
+animatedcollapse.addDiv('michael', 'fade=1,height=120px')
+
+animatedcollapse.addDiv('cat', 'fade=0,speed=400,group=pets')
+animatedcollapse.addDiv('dog', 'fade=0,speed=400,group=pets,persist=1,hide=1')
+animatedcollapse.addDiv('rabbit', 'fade=0,speed=400,group=pets,hide=1')
+
+animatedcollapse.ontoggle=function($j, divobj, state){ //fires each time a DIV is expanded/contracted
+	//$: Access to jQuery
+	//divobj: DOM reference to DIV being expanded/ collapsed. Use "divobj.id" to get its ID
+	//state: "block" or "none", depending on state
+}
+
+animatedcollapse.init()
+
+</script>
+</head>
+<body>
+<div id="warper">
+	<div id="mainbody">
+    <% if user_signed_in? %>
+        <%= render :partial => 'layouts/dashboard_header' %>
+    <% else %>
+        <%= render :partial => 'layouts/login' %>
+    <% end %>
+<%= yield %>
+</div>
+  <div class="clear"></div>
+</div>
+<div style="height:170px"></div>
+<div class="outer-footer">
+  <div class="inner-footer">
+    <div class="left-footer ">
+      <div class="heading-fot">Learn More</div>
+        <div class="lef-fot">
+          <ul>
+            <li><a href="#">How it Works</a></li>
+            <li><a href="#">Frequentiy asked Questions</a></li>
+            <li><a href="#">Terms & Privecy</a></li>
+          </ul>
+        </div>
+      
+    </div>
+    
+    <div class="left-footer ">
+      <div class="heading-fot">Company</div>
+        <div class="lef-fot">
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+    </div>
+    
+    <div class="left-footer ">
+      <div class="heading-fot">Partners</div>
+        <div class="lef-fot">
+          <ul>
+            <li><a href="#">Affillates Earn Commission</a></li>
+            <li><a href="#">International</a></li>
+          </ul>
+        </div>
+    </div>
+    
+    <div class="left-footer1 ">
+      <div class="heading-fot">Follow Us</div>
+        <div class="lef-fot1">
+          <ul>
+            <li><a href="#" class="twiter">Twitter</a></li>
+            <li><a href="#" class="face">Facebook</a></li>
+            <li><a href="#" class="bolg">Blog</a></li>
+          </ul>
+      </div>
+    </div>
+    <div class="bot-strip"></div>
+    <div class="footer">Copyight © 2012  LifeJournalonline.com</div>
+  </div>
+  
+</div>
+</body>
+</html>

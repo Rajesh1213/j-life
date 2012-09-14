@@ -1,0 +1,110 @@
+
+<script>
+$j(document).ready(function() {
+$j("#new_user").validate({});
+});
+</script>
+<div id="inner-content">
+			<div id="left-content">
+					<div class="heading">Become a Member</div>
+					<div class="boder-gray"></div>
+					<div class="gray13">Get access to the best, most awesome thing on the interwebs. <br />
+				    Membership is free and we accept new member daily.</div>
+					<div class="boder-gray"></div>
+					<div>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= devise_error_messages! %>
+<% if !flash.empty? %>
+            <div id="notice"><%= flash[:notice] %></div>
+        <% end %>
+
+					<table width="395" border="0" cellspacing="0" cellpadding="0">
+						  <tr>
+							<td width="133" align="right" valign="middle" ><div class="black12">First Name:</div></td>
+							<td width="262" align="left" >
+								<div class="input">
+								  <input id="user_Firstname" name="user[Firstname]" size="30" type="text" required/>
+								</div>
+						    </td>
+						  </tr>
+						  <tr>
+							<td align="right" valign="middle" ><div class="black12">Last Name:</div></td>
+							<td align="left"  >
+								<div class="input">
+									<input id="user_Lastname" name="user[Lastname]" size="30" type="text" required/>
+								</div>
+							</td>
+						  </tr>
+						  <tr>
+							<td align="right" valign="middle"><div class="black12">E-mail:</div></td>
+							<td align="left" >
+								<div class="input">
+									<input id="user_email" name="user[email]" size="30" type="email" value="" required/>
+								</div>
+							</td>
+						  </tr>
+						  <tr>
+							<td align="right" valign="middle"><div class="black12">Password</div></td>
+							<td align="left" >
+								<div class="input">
+									<input id="user_password" name="user[password]" size="30" type="password" required/>
+								</div>
+							</td>
+						  </tr>
+						  <tr>
+							<td align="right" valign="middle"><div class="black12">Confirm Password</div></td>
+							<td align="left" >
+								<div class="input">
+									<input id="user_password_confirmation" name="user[password_confirmation]" size="30" type="password" required/>
+								</div></td>
+						  </tr>
+						  
+						  <tr>
+							<td align="right">&nbsp;</td>
+							<td align="left"><div style="width:15px; float:left;  padding-top:5px;">
+							      <input type="checkbox" name="checkbox" value="checkbox" /></div>
+								  <div class="black12">I Accept the Terms &amp; Conditions<br />
+								Your e-mail address with us</div></td>
+						  </tr>
+						  <tr>
+							<td align="right" valign="top"><img src="../assets/lock-icon.gif" width="76" height="73" border="0" /></td>
+							<td align="right" valign="top">
+								<div class="boder-blue"></div>
+									<%= f.submit "Start Yout Journal", :class => 'button-start' %>
+								<div class="boder-blue1"></div>							</td>
+						  </tr>
+					  </table>
+<% end %>
+</div> 
+			</div>	
+			<div id="right-content">
+				<div class="video"><img src="../assets/vedio-img.jpg" width="535" height="343" /></div>
+			
+			</div>
+			<div class="boder-blue"></div>
+		<div class="coll">
+		<table width="960" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+		  <div class="more_text" style="padding-top:10px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknow hunt vermin. It has been associated with humans for 
+            at least 9,500 years. A skilled predator, when an unknow hunt vermin. since the 1500s, when typesetting industry. .</div>            
+			<div class="more_text">
+			<div style=" padding-left:910px;"> <a href="#" rel="toggle[cat]" data-openimage="../assets/collapse.jpg" 
+data-closedimage="../assets/expand.jpg"><img src="images/collapse.jpg" border="0" /></a></div>
+            </div></td>
+          </tr>
+        <tr>
+          <td width="960"><div id="cat" class="more_text1"  style="display:none"> The cat (Felis catus), also known as the domestic cat or house cat to 
+            distinguish it from other felines, is a small carnivorous species of 
+            crepuscular mammal that is often valued by humans for its companionship 
+            and its ability to hunt vermin. It has been associated with humans for 
+            at least 9,500 years. A skilled predator, the cat is known to hunt over 
+            1,000 species for food. It can be trained to obey simple commands. <br />
+</div></td>
+        </tr>
+      </table>
+	</div>
+		</div>
+
+<%#= render "devise/shared/links" %>

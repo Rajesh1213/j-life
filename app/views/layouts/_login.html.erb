@@ -1,0 +1,46 @@
+
+<script>
+$j(document).ready(function() {
+$j("#user_register").validate({});
+});
+</script>
+<div id="header">
+			<div class="logo"><a href="#"><img src="../assets/logo.gif" border="0" /></a></div>
+			<div class="white12">Already have an account?</div>
+			<!-- Login Starts Here -->
+            <div id="loginContainer">
+                <a href="#" id="loginButton"><span>Sign in</span><em></em></a>
+                <div style="clear:both"></div>
+                <div id="loginBox">                
+                    <div id="loginForm">
+					<div class="login_box_top"></div>
+					<div class="login_box_mid">
+                         <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html =>{:id => 'user_register'}) do |f| %>
+                        <fieldset id="body">
+                            <fieldset>
+                                <label for="email">Email:</label>
+                                <input id="user_email" name="user[email]" size="30" type="email" value="" required/>
+                            </fieldset>
+                            <fieldset>
+                                <label for="password">Password:</label>
+                                <input id="user_password" name="user[password]" size="30" type="password" required/>
+                            </fieldset>
+                            <%= f.submit "Sign in", :id => "login" %>
+                            <span><a href="#">Forgot password</a></span>
+                        </fieldset>
+                        <% end %>
+						</div>
+					<div class="login_box_bot"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Login Ends Here -->
+		</div>
+    
+   
+
+    
+
+    
+
+    
