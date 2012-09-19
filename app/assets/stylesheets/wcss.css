@@ -231,7 +231,7 @@ background:url(input-bg.gif) no-repeat left top;
 width:257px;
 height:20px;
 padding:5px;
-margin-bottom:8px;
+margin-bottom:15px;
 }
 
 
@@ -274,7 +274,8 @@ padding:5px;
 INPUT { 
 font-family: Verdana, Arial, Helvetica, sans-serif;	
 font-size: 12px;
-border:0
+border:0;
+width:245px;
 }
 
 .imgborder { 

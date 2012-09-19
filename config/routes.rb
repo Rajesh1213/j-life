@@ -7,6 +7,12 @@ ALifeJournal::Application.routes.draw do
     get 'logout' => 'devise/sessions#destroy'
   end
 
+  devise_for :users do
+    get "/users", :to => "home#index" # Rails 3
+end
+ 
+devise_for :users, :controllers => { :registrations => "users/registrations" }
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
